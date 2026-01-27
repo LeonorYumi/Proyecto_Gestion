@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@500;700;900&display=swap');
+
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+    --colorPrincipal: #0a3d62;   
+    --colorSecundario: #e30613;   
+    --colorDorado: #feca57;      
+    --colorTexto: #2c3e50;        
+    --colorTextoClaro: #555555;
+    --colorFondo: #ffffff;
+    --colorFondoSeccion: #f4f6f8; 
+    --bordeSuave: #e1e1e1;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; text-decoration: none; list-style: none; }
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--colorFondo);
+    color: var(--colorTexto);
+    line-height: 1.6;
+    font-size: 17px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    color: var(--colorPrincipal);
+    line-height: 1.2;
+}
+
+img { display: block; max-width: 100%; }
+
+
+
+
+
+
+
+
+
+/* =========================================
+   ESTILOS DE AUTENTICACIÓN (LOGIN / REGISTRO)
+   ========================================= */
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--colorFondoSeccion);
+    padding-top: 90px; /* Espacio del header */
+}
+
+.auth-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.auth-title { font-size: 2rem; margin-bottom: 0.5rem; color: var(--colorPrincipal); }
+.auth-subtitle { color: var(--colorTextoClaro); margin-bottom: 2rem; }
+
+.auth-form { display: flex; flex-direction: column; gap: 1.5rem; text-align: left; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--colorPrincipal); }
+.form-group input {
+    width: 100%; padding: 0.9rem; border: 1px solid #ddd;
+    border-radius: 8px; font-size: 1rem; background: #fcfcfc;
+}
+.form-group input:focus { border-color: var(--colorPrincipal); outline: none; }
+
+.btn-auth {
+    background-color: var(--colorPrincipal); color: white; padding: 1rem;
+    border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 700;
+    cursor: pointer; transition: background 0.3s; margin-top: 1rem;
+}
+.btn-auth:hover { background-color: #082a45; }
+
+.auth-footer { margin-top: 1.5rem; font-size: 0.95rem; }
+.auth-footer a { color: var(--colorPrincipal); font-weight: 700; }
+.auth-footer a:hover { text-decoration: underline; }
+
+
+/* Fuerza a que los elementos estén en la misma línea */
+.header__content {
+    display: flex !important; 
+    flex-direction: row !important; 
+    justify-content: space-between !important; 
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: white;
+    position: relative; 
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header__hamburger {
+    display: none; 
+    font-size: 2rem;
+    cursor: pointer;
+    color: #b71c1c; 
+}
+
+@media (max-width: 768px) {
+    .header__hamburger {
+        display: block !important; 
+    }
+
+    .navbar__container {
+        display: none;
+    }
+
+    /* Cuando se activa el menú */
+    .navbar__container.active {
+        display: block;
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background-color: #f4f4f4; 
+        z-index: 9999;
+        padding: 20px 10px; /* Añadimos un poco de padding lateral */
+    }
+
+    /* CAMBIO CLAVE: De vertical (column) a horizontal (row) */
+    .navbar__container.active ul {
+        display: flex; /* Aseguramos que sea flex */
+        flex-direction: row; /* Alineación horizontal */
+        flex-wrap: wrap; /* Si no caben, bajan a la siguiente línea (importante para móviles pequeños) */
+        justify-content: center; /* Centra los elementos horizontalmente */
+        align-items: center;
+        gap: 15px; /* Espacio entre links y botones */
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Achicamos el texto para que no empuje la hamburguesa fuera de la pantalla */
+    .header-title {
+        font-size: 0.85rem;
+    }
+}
