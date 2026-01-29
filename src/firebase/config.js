@@ -11,7 +11,8 @@ const firebaseConfig = {
   appId: "1:568080376655:web:8db92b5b7436e192bf1b3a",
   measurementId: "G-4KTYQC4R72"
 };
+
 const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
-export const db = getFirestore(app);
+export const db = getFirestore(app); // Esta es la línea clave para el formulario
